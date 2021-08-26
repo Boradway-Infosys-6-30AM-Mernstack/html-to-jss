@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.main-layout {
+  max-width: 75%;
+  margin: 10px auto;
+}
+.page-title {
+  font-size: 20px;
+  width: fit-content;
+  padding-right: 10px;
+  border-bottom: 3px solid cadetblue;
+}
+.head-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
