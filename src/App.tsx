@@ -11,9 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );

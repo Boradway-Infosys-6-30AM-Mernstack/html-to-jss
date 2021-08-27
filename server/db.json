@@ -3,6 +3,13 @@
         "title": "Welcome",
         "subtitle": "Copied from w3.css"
     },
+    "socialLinks": {
+        "facebook": "https://www.facebook.com/BroadwayInfo/",
+        "twitter": "https://twitter.com/broadwayinfosys",
+        "instagram": "https://www.instagram.com/broadwayinfosysnp/",
+        "linkedin": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHxsccZpNGXvgAAAXuFDjEouk-lJtMGmRfTFAi2GjLRLTJE2YKjmjsKTKQZbypLiE22ws_t79llHTIxpSUrQiJ5xD0UcykWugwBXSx6gpKEFnO8MvrfqB2BJbNmcOKT5oaCYXM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fbroadwayinfosys%2F",
+        "youTube": "https://www.youtube.com/channel/UCYdnMl2w-UeOiKP70a2xCXg/featured"
+    },
     "articles": [
         {
             "id": 1,
