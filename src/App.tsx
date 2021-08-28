@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-quill/dist/quill.snow.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";

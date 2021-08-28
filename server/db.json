@@ -1,27 +1,51 @@
 {
-    "header": {
-        "title": "Welcome",
-        "subtitle": "Copied from w3.css"
+  "header": {
+    "title": "Welcome",
+    "subtitle": "Copied from w3.css"
+  },
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/BroadwayInfo/",
+    "twitter": "https://twitter.com/broadwayinfosys",
+    "instagram": "https://www.instagram.com/broadwayinfosysnp/",
+    "linkedin": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHxsccZpNGXvgAAAXuFDjEouk-lJtMGmRfTFAi2GjLRLTJE2YKjmjsKTKQZbypLiE22ws_t79llHTIxpSUrQiJ5xD0UcykWugwBXSx6gpKEFnO8MvrfqB2BJbNmcOKT5oaCYXM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fbroadwayinfosys%2F",
+    "youTube": "https://www.youtube.com/channel/UCYdnMl2w-UeOiKP70a2xCXg/featured"
+  },
+  "articles": [
+    {
+      "id": 1,
+      "title": "Article 1",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
-    "socialLinks": {
-        "facebook": "https://www.facebook.com/BroadwayInfo/",
-        "twitter": "https://twitter.com/broadwayinfosys",
-        "instagram": "https://www.instagram.com/broadwayinfosysnp/",
-        "linkedin": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHxsccZpNGXvgAAAXuFDjEouk-lJtMGmRfTFAi2GjLRLTJE2YKjmjsKTKQZbypLiE22ws_t79llHTIxpSUrQiJ5xD0UcykWugwBXSx6gpKEFnO8MvrfqB2BJbNmcOKT5oaCYXM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fbroadwayinfosys%2F",
-        "youTube": "https://www.youtube.com/channel/UCYdnMl2w-UeOiKP70a2xCXg/featured"
+    {
+      "id": 2,
+      "title": "Article 2",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
-    "articles": [
-        {
-            "id": 1,
-            "title": "Article 1",
-            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        {
-            "id": 2,
-            "title": "Article 2",
-            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        }
-    ]
+    {
+      "id": 4,
+      "title": "Article 3",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "title": "My Title",
+      "subtitle": "My Subtitle",
+      "content": "My Content",
+      "id": 5
+    },
+    {
+      "content": "<p><strong><em>dwsdas</em></strong></p><ol><li><strong><em>adas</em></strong></li><li><strong><em>dasdas</em></strong></li><li><strong><em>dasdsa</em></strong></li><li><strong><em>dasdadas</em></strong></li><li><strong><em>dasdasd</em></strong></li></ol>",
+      "title": "dsadasdas",
+      "subtitle": "dsadasdsad",
+      "id": 6
+    },
+    {
+      "content": "<p>&lt;p style=\"color: red\"&gt; Test</p>",
+      "title": "Welcome",
+      "subtitle": "My Subtitle",
+      "id": 7
+    }
+  ]
 }

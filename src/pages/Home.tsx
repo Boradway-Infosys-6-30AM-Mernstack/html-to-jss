@@ -1,4 +1,5 @@
 import axios from "axios";
+import Interweave from "interweave";
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Header from "../components/Header";
@@ -106,7 +107,7 @@ const Home = () => {
 
       {articles.map((article, index) => (
         <div className="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-          {article.id % 2 == 0 ? (
+          {(index + 1) % 2 == 0 ? (
             <div className="w3-content">
               <div className="w3-third w3-center">
                 <i className="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
@@ -116,7 +117,7 @@ const Home = () => {
                 <h1>{article.title}</h1>
                 <h5 className="w3-padding-32">{article.subtitle}</h5>
 
-                <p className="w3-text-grey">{article.content}</p>
+                <Interweave content={article.content} />
               </div>
             </div>
           ) : (
@@ -125,7 +126,7 @@ const Home = () => {
                 <h1>{article.title}</h1>
                 <h5 className="w3-padding-32">{article.subtitle}</h5>
 
-                <p className="w3-text-grey">{article.content}</p>
+                <Interweave content={article.content} />
               </div>
               <div className="w3-third w3-center">
                 <i className="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>

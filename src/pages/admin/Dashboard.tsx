@@ -1,10 +1,12 @@
 import axios from "axios";
+import Interweave from "interweave";
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Modal, Form } from "react-bootstrap";
+import ReactQuill from "react-quill";
 import AdminLayout from "../../components/AdminLayout";
 
 interface IArticles {
-  id: number;
+  id?: number;
   title: string;
   subtitle: string;
   content: string;
@@ -13,15 +15,37 @@ interface IArticles {
 const Dashboard = () => {
   const [data, setData] = useState([] as IArticles[]);
 
+  const [value, setValue] = useState({} as IArticles);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const fetchData = async () => {
     const response = await axios.get("http://localhost:3010/articles");
     setData(response.data);
   };
 
   const handleAddBtnClick = () => {
-    console.log("Clicked on add btn");
+    setShow(true);
   };
 
+  const handleChange = (event: any) => {
+    event.persist();
+    console.log(event.target.name, event.target.value);
+    setValue({ ...value, [event.target.name]: event.target.value });
+  };
+
+  const handleContentChange = (content: any) => {
+    setValue({ ...value, content: content });
+  };
+
+  const addArticle = async () => {
+    const response = await axios.post("http://localhost:3010/articles", value);
+    handleClose();
+    fetchData();
+  };
   useEffect(() => {
     fetchData();
   }, []);
@@ -50,7 +74,9 @@ const Dashboard = () => {
                 <td>{article.id}</td>
                 <td>{article.title}</td>
                 <td>{article.subtitle}</td>
-                <td>{article.content}</td>
+                <td>
+                  <Interweave content={article.content} />
+                </td>
                 <td>
                   {" "}
                   <Button variant="primary">Edit</Button>{" "}
@@ -61,6 +87,45 @@ const Dashboard = () => {
           </tbody>
         </Table>
       </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Article</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              name="title"
+              value={value.title}
+              type="text"
+              placeholder="Enter Article's title"
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+            <Form.Label>Subtitle</Form.Label>
+            <Form.Control
+              name="subtitle"
+              value={value.subtitle}
+              type="text"
+              placeholder="Enter Article's subttile"
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+            <Form.Label>Content</Form.Label>
+            <ReactQuill value={value.content} onChange={handleContentChange} />
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={addArticle}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </AdminLayout>
   );
 };
