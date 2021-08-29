@@ -37,8 +37,8 @@ const Dashboard = () => {
     setValue({ ...value, [event.target.name]: event.target.value });
   };
 
-  const handleContentChange = (content: any) => {
-    setValue({ ...value, content: content });
+  const handleContentChange = (content: any,subtitle:any) => {
+    setValue({ ...value, content: content,subtitle:subtitle});
   };
 
   const addArticle = async () => {
@@ -73,7 +73,7 @@ const Dashboard = () => {
               <tr key={index}>
                 <td>{article.id}</td>
                 <td>{article.title}</td>
-                <td>{article.subtitle}</td>
+                <td> <Interweave content={article.content} /></td>
                 <td>
                   <Interweave content={article.content} />
                 </td>
@@ -104,13 +104,7 @@ const Dashboard = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Subtitle</Form.Label>
-            <Form.Control
-              name="subtitle"
-              value={value.subtitle}
-              type="text"
-              placeholder="Enter Article's subttile"
-              onChange={handleChange}
-            />
+            <ReactQuill value={value.subtitle} onChange={handleContentChange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
             <Form.Label>Content</Form.Label>
