@@ -14,8 +14,12 @@ interface IArticles {
 
 const Dashboard = () => {
   const [data, setData] = useState([] as IArticles[]);
-
-  const [value, setValue] = useState({} as IArticles);
+  const defaultValue = {
+    title: "",
+    subtitle: "",
+    content: ""
+  }
+  const [value, setValue] = useState(defaultValue as IArticles);
 
   const [show, setShow] = useState(false);
 
@@ -37,11 +41,11 @@ const Dashboard = () => {
     setValue({ ...value, [event.target.name]: event.target.value });
   };
 
-  const handleContentChange = (content:any) => {
-    setValue({ ...value, content: content});
+  const handleContentChange = (content: any) => {
+    setValue({ ...value, content: content });
   };
-  const handleSubtitlehange = (subtitle:any) => {
-    setValue({ ...value,subtitle:subtitle});
+  const handleSubtitlehange = (subtitle: any) => {
+    setValue({ ...value, subtitle: subtitle });
   };
   const addArticle = async () => {
     const response = await axios.post("http://localhost:3010/articles", value);
@@ -106,7 +110,7 @@ const Dashboard = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Subtitle</Form.Label>
-            <ReactQuill value={value.subtitle} onChange={handleSubtitlehange}/>
+            <ReactQuill value={value.subtitle} onChange={handleSubtitlehange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
             <Form.Label>Content</Form.Label>
