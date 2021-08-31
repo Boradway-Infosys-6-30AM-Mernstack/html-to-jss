@@ -37,8 +37,11 @@ const Dashboard = () => {
     setValue({ ...value, [event.target.name]: event.target.value });
   };
 
-  const handleContentChange = (content: any,subtitle:any) => {
-    setValue({ ...value, content: content,subtitle:subtitle});
+  const handleContentChange = (content:any) => {
+    setValue({ ...value, content: content});
+  };
+  const handleSubtitlehange = (subtitle:any) => {
+    setValue({ ...value,subtitle:subtitle});
   };
   const addArticle = async () => {
     const response = await axios.post("http://localhost:3010/articles", value);
@@ -103,7 +106,7 @@ const Dashboard = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Subtitle</Form.Label>
-            <ReactQuill value={value.subtitle} onChange={handleContentChange} />
+            <ReactQuill value={value.subtitle} onChange={handleSubtitlehange}/>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
             <Form.Label>Content</Form.Label>
