@@ -40,7 +40,6 @@ const Dashboard = () => {
   const handleContentChange = (content: any,subtitle:any) => {
     setValue({ ...value, content: content,subtitle:subtitle});
   };
-
   const addArticle = async () => {
     const response = await axios.post("http://localhost:3010/articles", value);
     handleClose();
