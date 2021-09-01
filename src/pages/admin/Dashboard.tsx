@@ -14,25 +14,34 @@ interface IArticles {
 
 const Dashboard = () => {
   const [data, setData] = useState([] as IArticles[]);
+  const [editValue, setEditvalue]=useState({} as IArticles)
   const defaultValue = {
     title: "",
     subtitle: "",
     content: ""
   }
   const [value, setValue] = useState(defaultValue as IArticles);
-
   const [show, setShow] = useState(false);
-
+  const [show1, setShow1]=useState(false);
   const handleClose = () => setShow(false);
+  const handleEditClose=()=>{
+    console.log("close")
+    setShow1(false)};
   const handleShow = () => setShow(true);
-
   const fetchData = async () => {
     const response = await axios.get("http://localhost:3010/articles");
     setData(response.data);
   };
-
+  const loadData = async (id:any) => {
+    const response = await axios.get(`${"http://localhost:3010/articles"}/${id}`);
+    setEditvalue(response.data);
+  };
   const handleAddBtnClick = () => {
     setShow(true);
+  };
+  const handEditBtnClick = (id:any) => {
+    setShow1(true);
+    loadData(id);
   };
 
   const handleChange = (event: any) => {
@@ -84,9 +93,8 @@ const Dashboard = () => {
                   <Interweave content={article.content} />
                 </td>
                 <td>
-                  {" "}
-                  <Button variant="primary">Edit</Button>{" "}
-                  <Button variant="danger">Delete</Button>{" "}
+                  <Button variant="primary" onClick= {()=>{handEditBtnClick(article.id)}}>Edit</Button>
+                  <Button variant="danger">Delete</Button>
                 </td>
               </tr>
             ))}
@@ -126,6 +134,41 @@ const Dashboard = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      <div>
+      <Modal show={show1} onHide={handleEditClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Article</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              name="title"
+              value={editValue.title}
+              type="text"
+              placeholder="Enter Article's title"
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+            <Form.Label>Subtitle</Form.Label>
+            <ReactQuill value={editValue.subtitle} onChange={handleSubtitlehange} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+            <Form.Label>Content</Form.Label>
+            <ReactQuill value={editValue.content} onChange={handleContentChange} />
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleEditClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={addArticle}>
+            Edit Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </div>
     </AdminLayout>
   );
 };
