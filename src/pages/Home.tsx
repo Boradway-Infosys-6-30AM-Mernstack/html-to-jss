@@ -102,9 +102,7 @@ const Home = () => {
           </a>
         </div>
       </div>
-
       <Header />
-
       {articles.map((article, index) => (
         <div className="w3-row-padding w3-light-grey w3-padding-64 w3-container">
           {(index + 1) % 2 == 0 ? (
