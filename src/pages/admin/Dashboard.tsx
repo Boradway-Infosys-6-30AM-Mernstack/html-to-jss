@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Table, Button, Modal, Form } from "react-bootstrap";
 import ReactQuill from "react-quill";
 import AdminLayout from "../../components/AdminLayout";
-
 interface IArticles {
   id?: number;
   title: string;
@@ -34,7 +33,6 @@ const Dashboard = () => {
   };
   const loadData = async (id:any) => {
     const response = await axios.get(`${"http://localhost:3010/articles"}/${id}`);
-    setEditvalue(response.data);
   };
   const handleAddBtnClick = () => {
     setShow(true);
@@ -49,18 +47,31 @@ const Dashboard = () => {
     console.log(event.target.name, event.target.value);
     setValue({ ...value, [event.target.name]: event.target.value });
   };
-
   const handleContentChange = (content: any) => {
     setValue({ ...value, content: content });
   };
   const handleSubtitlehange = (subtitle: any) => {
     setValue({ ...value, subtitle: subtitle });
   };
+  const handleContentEdit= (content: any) => {
+    setEditvalue({ ...editValue, content: content });
+  };
+  const handleSubtitleEdit= (subtitle: any) => {
+    setEditvalue({ ...editValue, subtitle: subtitle });
+  };
+  const handleTitleEdit= (title: any) => {
+    setEditvalue({ ...editValue, title: title });
+  };
+
   const addArticle = async () => {
     const response = await axios.post("http://localhost:3010/articles", value);
     handleClose();
     fetchData();
   };
+  const editArticle = async (id?:any)=>{
+    console.log("I m in Edit Article");
+     await axios.put(`${"http://localhost:3010/articles"}/${id}`,editValue);
+  }
   useEffect(() => {
     fetchData();
   }, []);
@@ -140,31 +151,31 @@ const Dashboard = () => {
           <Modal.Title>Edit Article</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
             <Form.Label>Title</Form.Label>
             <Form.Control
               name="title"
               value={editValue.title}
               type="text"
               placeholder="Enter Article's title"
-              onChange={handleChange}
+              onChange={handleTitleEdit}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput5">
             <Form.Label>Subtitle</Form.Label>
-            <ReactQuill value={editValue.subtitle} onChange={handleSubtitlehange} />
+            <ReactQuill value={editValue.subtitle} onChange={handleSubtitleEdit}/>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput6">
             <Form.Label>Content</Form.Label>
-            <ReactQuill value={editValue.content} onChange={handleContentChange} />
+            <ReactQuill value={editValue.content} onChange={handleContentEdit}/>
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleEditClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={addArticle}>
-            Edit Changes
+          <Button variant="primary"  onClick={()=>{editArticle(editValue.id)}}>
+            Edit Changes 
           </Button>
         </Modal.Footer>
       </Modal>
