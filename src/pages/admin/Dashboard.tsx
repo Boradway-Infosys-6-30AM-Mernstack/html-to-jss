@@ -18,7 +18,14 @@ interface IArticles {
 const Dashboard = () => {
 
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setInputVal({
+      title: '',
+      subtitle: '',
+      content: ''
+    } as IArticles);
+    setShow(false);
+  }
   const handleShow = () => setShow(true);
 
   const [showAdd, setShowAdd] = useState(false);
@@ -78,20 +85,11 @@ const Dashboard = () => {
 
 
 
-
-
-
-
-
-
   const updateItem = async (id: number) => {
-    const response = await axios(`http://localhost:3010/articles/${id}`, {
-      method: 'PATCH',
-      data: {
-        title: inputVal.title,
-        subtitle: inputVal.subtitle,
-        content: inputVal.content,
-      },
+    const response = await axios.patch(`http://localhost:3010/articles/${id}`, {
+      title: inputVal.title,
+      subtitle: inputVal.subtitle,
+      content: inputVal.content,
     });
 
     if (response.status === 200) {
