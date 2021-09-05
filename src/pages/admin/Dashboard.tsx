@@ -70,7 +70,7 @@ const Dashboard = () => {
   };
   const editArticle = async (id?:any)=>{
     console.log("I m in Edit Article");
-     await axios.put(`${"http://localhost:3010/articles"}/${id}`,editValue);
+     await axios.patch(`${"http://localhost:3010/articles"}/${id}`,editValue);
   }
   useEffect(() => {
     fetchData();
