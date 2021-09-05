@@ -1,20 +1,21 @@
 {
-    "header": {
-        "title": "Welcome",
-        "subtitle": "Copied from w3.css"
-    },
-    "articles": [
-        {
-            "id": 1,
-            "title": "Article 1",
-            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        {
-            "id": 2,
-            "title": "Article 2",
-            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        }
-    ]
+  "header": {
+    "title": "Welcome",
+    "subtitle": "Copied from w3.css"
+  },
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/BroadwayInfo/",
+    "twitter": "https://twitter.com/broadwayinfosys",
+    "instagram": "https://www.instagram.com/broadwayinfosysnp/",
+    "linkedin": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHxsccZpNGXvgAAAXuFDjEouk-lJtMGmRfTFAi2GjLRLTJE2YKjmjsKTKQZbypLiE22ws_t79llHTIxpSUrQiJ5xD0UcykWugwBXSx6gpKEFnO8MvrfqB2BJbNmcOKT5oaCYXM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fbroadwayinfosys%2F",
+    "youTube": "https://www.youtube.com/channel/UCYdnMl2w-UeOiKP70a2xCXg/featured"
+  },
+  "articles": [
+    {
+      "title": "Chariots of the Gods: 50th Anniversary Edition on",
+      "subtitle": "<p><strong>Now in a beautiful 50th anniversary edition with a new foreword and afterword by the author, this is the&nbsp;groundbreaking classic that introduced the theory that ancient Earth established contact with aliens.</strong></p>",
+      "content": "<p>mmediately recognized as a work of monumental importance,&nbsp;<em>Chariots of the Gods</em>endures as proof that Earth has been visited repeatedly by advanced aliens from other worlds. Here, Erich von Däniken examines ancient ruins, lost cities, spaceports, and a myriad of hard scientific facts that point to extraterrestrial intervention in human history. Most incredible of all, however, is von Däniken's theory that we are the descendants of these galactic pioneers—and he reveals the archaeological discoveries that prove it...</p>",
+      "id": 1
+    }
+  ]
 }
